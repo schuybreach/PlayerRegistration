@@ -1,0 +1,140 @@
+Summer Soccer League
+Schuyler Meyer
+Project 2
+CS142
+
+DESIGN
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COMPONENT: class RegistrationEntry
+
+The player's entry
+
+Public method:
+
+->  RegistrationEntry() : name("No Name"), year_of_birth(9999), category("U0"), reg_status(1)
+	istream & operator>>(std::istream & in, RegistrationEntry & e)
+	ostream & operator<<(std::ostream & out, const RegistrationEntry & e)
+	bool operator==(const RegistrationEntry & e, const std::string s)
+	
+	string name
+	unsigned year_of_birth
+	string category
+	bool reg_status
+    
+    Implementation: Reads in the player's information: name, year of birth, category, registration status, and outputs the information to a file when called
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COMPONENT: class RegistrationList
+
+Holds all the functions used by the program. 
+
+Public methods:
+          
+-> 	RegistrationList() : itr_current_entry(m_entries.end()) {}
+
+->  void add(const std::string & name, const unsigned & year_of_birth, std::string & category, bool & reg_status)
+		
+		Takes the inputted information and places it in an entry. The entry is added to the list.
+
+->  void display_current_entry() const
+
+		Displays the current entry.
+
+->  void edit_current(const std::string & name, const unsigned & year_of_birth, std::string & new_category, bool & reg_status)
+		
+		Finds the user specified entry and allows the user to edit all the details in that entry.
+		
+		Note: for future implementation, everything related to this function should be in this function. Currently, the user-
+		inputted information is collected in the case statement in Registration.cpp. Also, a possible improvement to this 
+		function could be that if the user presses enter without entering any information, the current information stays the 
+		same. For example, if the player was previously "not paid" but then they paid, the user could "skip" inputted the name
+		and year_of_birth since those would be the same.
+
+->  void find(const std::string & name)
+
+		Iterates through the entire map and searches for the user inputted player name. Displays the entry if found, displays 
+		the previously showed entry if not found.
+
+->  bool empty() const { return m_entries.empty(); }
+
+		Used to determine if the map is empty.
+
+->  void read_file( const std::string & file_name )
+
+		Reads in the specified file and inserts the data into a map. 
+		Function details in RegistrationList.cpp.
+
+->  void write_file( const std::string & file_name ) const
+
+		Writes the entire map to the file.
+		Function details in RegistrationList.cpp.
+
+->  void write_file_backup(const std::string & file_name) const
+
+		Same as above. Only triggers when the registration list is deleted. This saves a copy of the registration list, in case it was not meant to be deleted.
+		Function details in RegistrationList.cpp.
+
+->  void write_file_list_cat(const std::string & file_name) const
+
+		Similar to above. Only writes the players in the user specified categories to the file.
+		Function details in RegistrationList.cpp.
+
+->  void clear()
+
+		Deletes the entire registration list.
+
+->  friend bool operator==(const RegistrationEntry & e1, const RegistrationEntry & e2)
+		
+		Used for "write_file_list_cat". Allows data of type RegistrationEntry to be compared.
+
+
+    int num_entries -> number of player entries in a given file.
+
+	
+Private:  
+    map<string, RegistrationEntry> m_entries -> the map containing all the entries.
+    map<string, RegistrationEntry>::iterator itr_current_entry -> the map iterator pointing to the current entry.
+	
+	Note: The player entries were implemented into a map for organizational purposes. With the name being the key, the user can easily look up, edit, or add 
+	any player in the player entry.	
+	
+
+Implementation:  
+Stores four lines from the file into a map. Name (string), year of birth (unsigned), category (string), reg_status (bool), with the name being the key 
+of the map. These functions can also add, manipulate, and delete the data in the map and write it to a file.
+
+Collaborator: RegistrationEntry.h
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COMPONENT: class Registration
+
+Displays the current entry as well as the menu.
+
+Public methods:
+
+->	void run()
+
+		Displays the menu and the current entry.
+		
+	RegistrationList entry_list
+		
+Private:
+		
+->	void execute(char command, bool & done)
+
+		Holds all the commands of the menu and the corresponding functions or function calls associated with the given command. Will run forever.
+		
+->	void display_entry_and_menu() const;
+		
+		Displays the menu.
+
+		
+Implementation: 
+Asks the user for the current year and sets it to a global variable to be used with the category and current season. Will display the menu and 
+execute the user specified commands.
+		
+Collaborator: Registration.h		

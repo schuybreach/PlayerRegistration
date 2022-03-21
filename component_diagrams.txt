@@ -1,0 +1,76 @@
+Schuyler Meyer
+CS142
+Project 2
+
+Component Diagrams:
+***********************************************************************************************
+
+class RegistrationEntry
+
+Public method:
+
+->  RegistrationEntry() : name("No Name"), year_of_birth(9999), category("U0"), reg_status(1)
+
+->	istream & operator>>(istream & in, RegistrationEntry & e)
+
+->	ostream & operator<<(ostream & out, const RegistrationEntry & e)
+
+->	bool operator==(const RegistrationEntry & e, const string s)
+	
+	string name
+	unsigned year_of_birth
+	string category
+	bool reg_status
+
+------------------------------------------------------------------------------------------------
+
+class RegistrationList
+
+Public:
+          
+-> 	RegistrationList() : itr_current_entry(m_entries.end()) {}
+
+->  void add(const string & name, const unsigned & year_of_birth, string & category, bool & reg_status)
+		
+->  void display_current_entry() const
+
+->  void edit_current(const string & name, const unsigned & year_of_birth, string & new_category, bool & reg_status)
+
+->  void find(const string & name)
+
+->  bool empty() const { return m_entries.empty(); }
+
+->  void read_file( const string & file_name )
+
+->  void write_file( const string & file_name ) const
+
+->  void write_file_backup(const string & file_name) const
+
+->  void write_file_list_cat(const string & file_name) const
+
+->  void clear()
+
+->  friend bool operator==(const RegistrationEntry & e1, const RegistrationEntry & e2)
+
+    int num_entries 
+	
+Private:  
+    map<string, RegistrationEntry> m_entries 
+    map<string, RegistrationEntry>::iterator itr_current_entry 
+	
+-----------------------------------------------------------------------------------------------------
+
+class Registration
+
+Public:
+
+->	void run()
+	RegistrationList entry_list
+		
+Private:
+
+->	void display_entry_and_menu() const
+
+->	void execute(char command, bool & done)
+
+*******************************************************************************************************

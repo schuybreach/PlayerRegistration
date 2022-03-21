@@ -1,0 +1,61 @@
+Schuyler Meyer
+CS142
+Project 2
+
+Registration List
+
+SPECIFICATION
+
+
+OVERVIEW
+
+A simple database that allows the user to interact with the members and add, edit, search, and delete them.
+
+
+DETAILS
+
+The program interacts with the user as shown in the following example:
+
+The entries are displayed in alphabetical order.  No entry is 
+displayed if the phone book is empty. 
+
+Asuna Yuuki
+2007
+U12
+Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice:
+
+
+file: registration.txt
+
+The program begins by asking the user for the current year.  This is the number that calculates the category for the 
+given player and determines the year of the current season.
+
+The menu is displayed between lines of 67 dashes.  The name of the first player entry is printed above the first line of dashes.  
+Below the first line of dashes, a menu of commands is displayed.  Below that menu, the prompt "Please Select a Choice: " is displayed.  
+The user types the first letter of a command, the command executes and everything is redisplayed.  Some commands prompt the user for more information.  
+
+Here is a description of the various commands:
+
+Full List: asks the user for a category and filename and outputs all the players in that category to the given filename.
+
+Search Player: asks the user for the name of a player, displays that player.
+
+Add Player: asks the user for name, year of birth, (category is calculated based on year of birth and current year), and registration status.
+
+Edit Player: similar to Add command, except edits a current player instead of adding a new player to the database.
+
+New Season: asks the user if they want to delete the current season and start a new one. If yes, a backup will be created.
+
+quit: Stops the program.
+
+
+NOTES FOR LATER VERSIONS
+
+Add more error-checking.
+Add current year to output file.

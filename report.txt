@@ -1,0 +1,55 @@
+Schuyler Meyer
+CS142
+Project 2
+
+Status Report
+
+-> Part 1:
+Part 1 works well. When the "n" command (for "New Season") is given, the program asks the 
+user if they are sure that they want to continue with deleting the current season and 
+starting a new season. The user will input "y" or "Y" for yes and to continue with the 
+process. One possible flaw with this design is that if the user types anything other than
+"y" or "Y", the "new season" code will exit and the user will be brought back to the menu, 
+without the program deleting anything. Otherwise, if the user inputs "y" or "Y", the 
+program will continue by first backing up the current file, then will proceed with deleting
+the current file. 
+
+-> Part 2:
+Part 2 works well. When the user inputs "a" (for "Add"), the prompt for the user to enter a
+new name will be shown, followed by year of birth. The program will then calculate the 
+division based on the inputted year of birth and display the result. Next it will ask the 
+user of registration status (0 for paid and 1 for not paid). The information will then be 
+placed into the database.
+
+-> Part 3:
+Part 3 works well. When the "s" command (for "Search Player") is given, the program asks 
+the user for the name of the player then wish to search for. The program will then search
+and display the requested player. This component is case sensitive and has to include the 
+full name. (ex. Bill Smith, not bill, nor bill smith). Currently, if the player is not 
+found, the program will exit. In future implementations, the program should ask for the 
+name again and not just simply exit.
+
+-> Part 4:
+Part 4 works well. When the "e" command (for "Edit Player") is given, the program asks the
+user for the name of the player they wish to edit. Then the program goes through the same
+process as in Part 2 (see above). 
+
+-> Part 5:
+Part 5 works well. When the "f" command (for "Full List") is given, the program asks for 
+an output file name and then asks for a category. Once completed, the alphabetized list
+will be outputed to the given file name and the program will return to menu. No error 
+checking is involved.
+
+
+-> Overall, for future implementations, the code could be cleaned up and more organized.
+For example, a lot of the implementations are within the case statement from the menu.
+These should be moved to within the corresponding functions, to make the code cleaner.
+One aspect, that could not be implemented was writing the current year to the output 
+file. This should be implemented. More error checking as well as thorough testing should
+also be conducted. 
+Also, for the player entry, the name is a string, the year of birth is a unsigned int, 
+the category is a string, and the registration status is a bool. For both the category
+and the registration status, these values are originally inputted from the original 
+file, however, when the program is run, and the output file are outputed, the category
+is automatically calculated and the registration status is changed from 1's and 0's in
+the original file to "paid" or "not paid".

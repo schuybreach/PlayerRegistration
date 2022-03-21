@@ -1,0 +1,17 @@
+Schuyler Meyer
+CS142
+Project 2
+
+A sample interface:
+
+
+Asuna Yuuki
+2007
+U12
+Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice:

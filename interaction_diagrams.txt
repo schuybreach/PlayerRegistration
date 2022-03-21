@@ -1,0 +1,103 @@
+Schuyler Meyer
+CS142
+Project 2
+
+Interaction Diagrams:
+*********************************************************************
+
+Please Input the Current Year: 2017
+
+Asuna Yuuki
+2007
+U12
+Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: s
+Please Enter the Name (ex. Asuna Yuuki): Bill Fish
+
+Bill Fish
+2002
+U17
+Not Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: e
+Please Enter the Name (ex. Asuna Yuuki): Bill Fish
+Please Enter the New Name (ex. Asuna Yuuki): Bill Fishy
+Please Enter the New Year of Birth (ex. 2007): 2002
+Your Division is: U17
+Please State the New Registration Status (0 = Paid, 1 = Not Paid): 0
+
+
+Bill Fishy
+2002
+U17
+Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: f
+Please enter a filename (ex. 'U14List.txt'): U10List.txt
+Please enter the category (ex. 'U14'): U10
+
+Bill Fishy
+2002
+U17
+Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: n
+Please provide the current year: 2018
+
+Are you sure you want to delete all players ('y' for Yes, 'n' for No)?
+y
+
+The Registration List has been backed up and saved as 'registration_backup.txt'.
+
+Deleting now...
+The Registration List has been deleted.
+
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: s
+Please Enter the Name (ex. Asuna Yuuki): Asuna Yuuki
+
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: a
+Please Enter a New Name (ex. Asuna Yuuki): Asuna Yuuki
+Please Enter the Year of Birth (ex. 2007): 2007
+Your Division is: U12
+Please State the Registration Status (0 = Paid, 1 = Not Paid): 0
+
+
+Asuna Yuuki
+2007
+U12
+Paid
+-------------------------------------------------------------------
+|     Full List (f)     |    Add Player (a)   |   New Season (n)  |
+-------------------------------------------------------------------
+|   Search Player (s)   |   Edit Player (e)   |      Quit (q)     |
+-------------------------------------------------------------------
+Please Select a Choice: q
+
+*********************************************************************
